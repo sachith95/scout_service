@@ -12,9 +12,9 @@ Restaurant.use((req, res, next) => {
 });
 
 /**
- * @api {get} /api/v1/restaurants ? query Request Restaurants List by query
+ * @api {get} /api/v1/restaurant ? query Request Restaurants List by query
  */
- Restaurant.get("/", auth, getRestaurants);
+ Restaurant.get("/", getRestaurants);
 
 
 
