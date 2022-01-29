@@ -6,11 +6,6 @@ import RestaurantModel from "../../../../schemas/restaurant-model";
  * @description Get all `Restaurant` by `query`
  */
 export const fetchRestaurants = async (query) => {
-  // opening_hours: Mon-Thu, Sun 11:30 am - 9 pm  / Fri-Sat 11:30 am - 9:30 pm
-  // name: "The Restaurant",
-  // st : start timestamp = Fri Jan 28 2022 19:30:00 GMT+0530
-  // et : end timestamp = Fri Jan 28 2022 20:30:00 GMT+0530
-  console.log("wwwwwwwwww");
   const { name, timestamp } = JSON.parse(query);
   const dateQuery = likeQueryGenForDateRange(timestamp);
   console.log(dateQuery);
@@ -21,7 +16,6 @@ export const fetchRestaurants = async (query) => {
         ...dateQuery,
       },
       {
-        _id: 0,
         __v: 0,
       }
     ).lean()

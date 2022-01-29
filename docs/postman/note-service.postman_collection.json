@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "c94d298d-c34e-47df-800c-d1eb2ceff4d1",
+		"name": "note-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\r\n    \"email\": \"sachithsilva2011@gmail.com\",\r\n    \"password\": \"1234567\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Note",
+			"item": [
+				{
+					"name": "Get Archived/ Unarchived Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ODNmZDE3NTNiNDRkNDhlYzNhYTUiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTFAZ21haWwuY29tIiwiaWF0IjoxNjM5Mjg1NzcyfQ.D_8yvVQq4BqybYaeDZ-OKJx3p0gUtAQOH7oNBXMCTi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/note?archived=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"note"
+							],
+							"query": [
+								{
+									"key": "archived",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ODNmZDE3NTNiNDRkNDhlYzNhYTUiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTFAZ21haWwuY29tIiwiaWF0IjoxNjM5Mjg1NzcyfQ.D_8yvVQq4BqybYaeDZ-OKJx3p0gUtAQOH7oNBXMCTi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"note\":{\r\n        \"title\": \"test1111\",\r\n        \"text\": \"my note\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1MTlkMWI2ZWM3MzNmMjg0NTg0NTAiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTJAZ21haWwuY29tIiwiaWF0IjoxNjM5MjU5ODczfQ.9bCthA4CggoLVx7L8rb1b2wr-EQuOPzpfylX3HN425s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"note\": {\r\n        \"id\": \"21639263177947\",\r\n        \"text\": \"my note 2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Archive",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1MTlkMWI2ZWM3MzNmMjg0NTg0NTAiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTJAZ21haWwuY29tIiwiaWF0IjoxNjM5MjU5ODczfQ.9bCthA4CggoLVx7L8rb1b2wr-EQuOPzpfylX3HN425s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/note/archive?id=11639285215348",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"archive"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11639285215348"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1MTlkMWI2ZWM3MzNmMjg0NTg0NTAiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTJAZ21haWwuY29tIiwiaWF0IjoxNjM5MjU5ODczfQ.9bCthA4CggoLVx7L8rb1b2wr-EQuOPzpfylX3HN425s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/note/11639285215348",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"11639285215348"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\r\n    \"name\": \"silva\",\r\n    \"email\": \"sachithsilva2013@gmail.com\",\r\n    \"password\": \"1234567\",\r\n    \"status\": true\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ODNmZDE3NTNiNDRkNDhlYzNhYTUiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTFAZ21haWwuY29tIiwiaWF0IjoxNjM5Mjg1NzcyfQ.D_8yvVQq4BqybYaeDZ-OKJx3p0gUtAQOH7oNBXMCTi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ODNmZDE3NTNiNDRkNDhlYzNhYTUiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTFAZ21haWwuY29tIiwiaWF0IjoxNjM5Mjg1NzcyfQ.D_8yvVQq4BqybYaeDZ-OKJx3p0gUtAQOH7oNBXMCTi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ODNmZDE3NTNiNDRkNDhlYzNhYTUiLCJlbWFpbCI6InNhY2hpdGhzaWx2YTIwMTFAZ21haWwuY29tIiwiaWF0IjoxNjM5Mjg1NzcyfQ.D_8yvVQq4BqybYaeDZ-OKJx3p0gUtAQOH7oNBXMCTi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user?email=sachithsilva2012@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "sachithsilva2012@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
