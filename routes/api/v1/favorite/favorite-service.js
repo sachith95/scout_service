@@ -15,7 +15,9 @@ export const fetchFavoriteDetails = async (user) => {
         _id: 0,
         __v: 0,
       }
-    ).lean()
+    )
+      .populate("restaurantId")
+      .exec()
   );
   if (error) {
     return Promise.reject(error);
@@ -28,7 +30,7 @@ export const fetchFavoriteDetails = async (user) => {
  * @description Create `Favorite Collection` by `query`
  */
 
- export const createFavoriteCollection = async (user, body) => {
+export const createFavoriteCollection = async (user, body) => {
   const name = body.name;
   console.log(user);
   const [error, favoriteCollection] = await to(
@@ -42,10 +44,6 @@ export const fetchFavoriteDetails = async (user) => {
   }
   return favoriteCollection;
 };
-
-
-
-
 
 /**
  * Add `Favorite` by `query`
@@ -64,11 +62,11 @@ export const addFavoriteDetails = async (user, body) => {
         $push: {
           restaurantId: body._id,
         },
-      },
+      }
     ).lean()
   );
   if (error) {
     return Promise.reject(error);
   }
   return favoriteDetails;
-}
+};

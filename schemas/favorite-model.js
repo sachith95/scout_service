@@ -14,6 +14,7 @@ const favorite = new Schema(
       type: [Schema.Types.ObjectId],
       ref: "RestaurantModel",
       required: false,
+      
     },
   },
   {
