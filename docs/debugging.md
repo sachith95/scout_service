@@ -70,8 +70,6 @@ Almost there 😉. Now run the following command to start the application in deb
 ## Testing with Postman
 
 developed and tested API are added to Postman collection share under docs/postman.
-or you can use the following published collection for testing.
-<https://documenter.getpostman.com/view/4971741/UVR5poCi>
 
 Note that some of the endpoints require authentication.Make sure to Bear the following headers in the request:
 
