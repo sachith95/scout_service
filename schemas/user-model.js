@@ -49,7 +49,7 @@ UserModel.methods.generateAuthToken = async function () {
 UserModel.statics.findByCredentials = async (email, password) => {
   // eslint-disable-next-line no-use-before-define
   const [error, user] = await to(User.findOne({ email, status: true }))
-  if (error) {
+  if (error || user === null) {
     throw new Error('Invalid login details')
   }
   const isPasswordMatch = await bcrypt.compare(password, user.password)

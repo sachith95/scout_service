@@ -21,7 +21,7 @@ export const loginUser = async (requestBody) => {
   }
 
   if (error) {
-    throw error;
+    throw new Error(error);
   }
 
   user.log({

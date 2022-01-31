@@ -14,14 +14,13 @@ import { loginUser, logout } from "./auth-service";
 
 export const authLogin = async (req, res) => {
   const [error, result] = await to(loginUser(req.body.user));
-
   if (result) {
     return res.send({ data: result, code: OK });
   }
 
   return res.status(INTERNAL_SERVER_ERROR).send({
     error: {
-      message: error,
+      message: error.message,
       code: INTERNAL_SERVER_ERROR,
     },
   });
