@@ -11,13 +11,18 @@ References: <https://github.com/Microsoft/vscode-recipes>
 1. Make sure Node.js is installed and running.
 2. Make sure MongoDB is installed and running.
 3. Make sure MongoDB is running on port 27017.
-4. Make sure .env file is present in the root directory and contains the following variables:
+4. Make sure .env file is present in the root directory and contains the
+
+following variables:
+refer sample devenv file for more details.
 
 ### Environments Variables
- <!-- Please note following are for testing and debugging purpose do not use in production -->  
- 1. DATABASE_URL=mongodb://localhost:27017/testdb
- 2. API_PORT=3000
- 3. JWT_KEY=secret
+
+ <!-- Please note following are for testing and debugging purpose do not use in production -->
+
+1.  DATABASE_URL=mongodb://localhost:27017/testdb
+2.  API_PORT=3000
+3.  JWT_KEY=secret
 
 Almost there 😉. Now run the following command to start the application in debug mode:
 
